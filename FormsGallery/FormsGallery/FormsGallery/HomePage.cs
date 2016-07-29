@@ -21,8 +21,10 @@ namespace FormsGallery
                     Intent = TableIntent.Menu,
                     Root = new TableRoot
                     {
+                        
                         new TableSection("Views for Presentation")
                         {
+                            #region Views for Presentation
                             new TextCell
                             {
                                 Text = "Label",
@@ -57,10 +59,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(MapDemoPage)
                             }
-                        }, 
+                            #endregion
+                        },
 
                         new TableSection("Views that Initiate Commands")
                         {
+                            #region Views that Initiate Commands
                             new TextCell
                             {
                                 Text = "Button",
@@ -74,10 +78,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(SearchBarDemoPage)
                             }
+                            #endregion
                         },
 
                         new TableSection("Views for Common Data Types")
                         {
+                            #region Views for Common Data Types
                             new TextCell
                             {
                                 Text = "Slider (double)",
@@ -112,10 +118,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(TimePickerDemoPage)
                             }
+                            #endregion
                         },
 
                         new TableSection("Views for Editing Text")
                         {
+                            #region Views for Editing Text
                             new TextCell
                             {
                                 Text = "Entry (single line)",
@@ -129,10 +137,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(EditorDemoPage)
                             }
+                            #endregion
                         },
 
                         new TableSection("Views to Indicate Activity")
                         {
+                            #region Views to Indicate Activity
                             new TextCell
                             {
                                 Text = "ActivityIndicator",
@@ -146,10 +156,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(ProgressBarDemoPage)
                             }
+                            #endregion
                         },
 
                         new TableSection("Views that Display Collections")
                         {
+                            #region Views that Display Collections
                             new TextCell
                             {
                                 Text = "Picker",
@@ -177,10 +189,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(TableViewFormDemoPage)
                             }
+                            #endregion
                         },
 
                         new TableSection("Cells")
                         {
+                            #region Cells
                             new TextCell
                             {
                                 Text = "TextCell",
@@ -208,10 +222,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(EntryCellDemoPage)
                             }
+                            #endregion
                         },
 
                         new TableSection("Layouts with Single Content")
                         {
+                            #region Layouts with Single Content
                             new TextCell
                             {
                                 Text = "ContentView",
@@ -230,10 +246,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(ScrollViewDemoPage)
                             }
+                            #endregion
                         },
 
                         new TableSection("Layouts with Multiple Children")
                         {
+                            #region Layouts with Multiple Children
                             new TextCell
                             {
                                 Text = "StackLayout",
@@ -258,10 +276,12 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(RelativeLayoutDemoPage)
                             }
+                            #endregion
                         },
 
                         new TableSection("Pages")
                         {
+                            #region Pages
                             new TextCell
                             {
                                 Text = "ContentPage",
@@ -292,6 +312,7 @@ namespace FormsGallery
                                 Command = navigateCommand,
                                 CommandParameter = typeof(CarouselPageDemoPage)
                             }
+                            #endregion
                         }
                     }
                 };
