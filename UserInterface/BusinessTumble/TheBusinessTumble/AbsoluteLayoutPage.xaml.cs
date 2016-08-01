@@ -15,6 +15,17 @@ namespace TheBusinessTumble
 		public override string ToString(){
 			return this.Title;
 		}
-	}
+
+        void OnMaroonButtonClicked(object sender, EventArgs e)
+        {
+            DisplayAlert("", "Maroon Button Clicked", "Cancel");
+        }
+
+        void OnRedButtonClicked(object sender, EventArgs e)
+        {
+            DisplayAlert("", "Red Button Clicked", "Cancel");
+        }
+
+    }
 }
 
