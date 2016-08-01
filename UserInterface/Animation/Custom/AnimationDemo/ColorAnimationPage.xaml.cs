@@ -20,9 +20,9 @@ namespace AnimationDemo
 		{
 			SetIsEnabledCancelButtonState(true);
 
-			await Task.WhenAll(
-				label.ColorTo(Color.Red, Color.Blue, c => label.TextColor = c, 5000),
-				label.ColorTo(Color.Blue, Color.Red, c => label.BackgroundColor = c, 5000));
+            await Task.WhenAll(
+                label.ColorTo(Color.Red, Color.Blue, c => label.TextColor = c, 5000),
+                label.ColorTo(Color.Blue, Color.Red, c => label.BackgroundColor = c, 5000));
 
 			label.BackgroundColor = Color.Default;
 			label.TextColor = Color.Default;

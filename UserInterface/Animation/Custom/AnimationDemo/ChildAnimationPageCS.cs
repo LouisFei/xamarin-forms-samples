@@ -46,7 +46,8 @@ namespace AnimationDemo
 		{
 			SetIsEnabledButtonState(false, true);
 
-			var parentAnimation = new Animation();
+            #region 组合动画
+            var parentAnimation = new Animation();
 			var scaleUpAnimation = new Animation(v => image.Scale = v, 1, 2, Easing.SpringIn);
 			var rotateAnimation = new Animation(v => image.Rotation = v, 0, 360);
 			var scaleDownAnimation = new Animation(v => image.Scale = v, 2, 1, Easing.SpringOut);
@@ -57,14 +58,15 @@ namespace AnimationDemo
 
 			parentAnimation.Commit(this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState(true, false));
 
-			//			new Animation {
-			//				{ 0, 0.5, new Animation (v => image.Scale = v, 1, 2) },
-			//				{ 0, 1, new Animation (v => image.Rotation = v, 0, 360) },
-			//				{ 0.5, 1, new Animation (v => image.Scale = v, 2, 1) }
-			//			}.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
-		}
+            //			new Animation {
+            //				{ 0, 0.5, new Animation (v => image.Scale = v, 1, 2) },
+            //				{ 0, 1, new Animation (v => image.Rotation = v, 0, 360) },
+            //				{ 0.5, 1, new Animation (v => image.Scale = v, 2, 1) }
+            //			}.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
+            #endregion
+        }
 
-		void OnCancelAnimationButtonClicked(object sender, EventArgs e)
+        void OnCancelAnimationButtonClicked(object sender, EventArgs e)
 		{
 			this.AbortAnimation("ChildAnimations");
 			SetIsEnabledButtonState(true, false);
