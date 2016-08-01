@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAnimation", "BasicAnimation\BasicAnimation.csproj", "{60102E37-B00A-41B6-927C-18FAB34A1BAD}"
 EndProject
@@ -79,6 +79,7 @@ Global
 		{375451C6-C82F-4271-80BF-D673D88CFFC0}.Release|x86.ActiveCfg = Release|iPhoneSimulator
 		{D7F487F2-BDE3-46E3-9D52-FFF0242EA744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7F487F2-BDE3-46E3-9D52-FFF0242EA744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7F487F2-BDE3-46E3-9D52-FFF0242EA744}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{D7F487F2-BDE3-46E3-9D52-FFF0242EA744}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{D7F487F2-BDE3-46E3-9D52-FFF0242EA744}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{D7F487F2-BDE3-46E3-9D52-FFF0242EA744}.Debug|iPhone.Build.0 = Debug|Any CPU
