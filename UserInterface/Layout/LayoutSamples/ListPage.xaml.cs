@@ -10,6 +10,7 @@ namespace LayoutSamples
 		public ListPage ()
 		{
 			InitializeComponent ();
+
 			List<Page> listOfPages = new List<Page> () {
 				new CalculatorGridXAML (),
 				new CalculatorGridCode (),
