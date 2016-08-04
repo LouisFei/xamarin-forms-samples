@@ -25,23 +25,25 @@ namespace WorkingWithListviewNative
 			listView.ItemTemplate = new DataTemplate (typeof(TextCell));
 			listView.ItemTemplate.SetBinding (TextCell.TextProperty, ".");
 
-			listView.ItemSelected += async (sender, e) => {
-				if (e.SelectedItem == null)
-					return;
-				listView.SelectedItem = null; // deselect row
-				await Navigation.PushModalAsync (new DetailPage (e.SelectedItem));
-			};
+            listView.ItemSelected += async (sender, e) =>
+            {
+                if (e.SelectedItem == null)
+                    return;
+                listView.SelectedItem = null; // deselect row
+                await Navigation.PushModalAsync(new DetailPage(e.SelectedItem));
+            };
 
-			Content = new StackLayout { 
-				Padding = new Thickness (5, Device.OnPlatform (20, 0, 0), 5, 0),
-				Children = {
-					new Label {
-						HorizontalTextAlignment = TextAlignment.Center,
-						Text = "Xamarin.Forms built-in ListView"
-					},
-					listView
-				}
-			};
+            Content = new StackLayout
+            {
+                Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0),
+                Children = {
+                    new Label {
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        Text = "Xamarin.Forms built-in ListView"
+                    },
+                    listView
+                }
+            };
 		}
 	}
 }
