@@ -35,8 +35,15 @@ namespace WorkingWithListview
 			button.Clicked += (sender, e) => {
 				var b = (Button)sender;
 				var t = b.CommandParameter;
-				((ContentPage)((ListView)((StackLayout)b.ParentView).ParentView).ParentView).DisplayAlert("Clicked", t + " button was clicked", "OK");
-				Debug.WriteLine("clicked" + t);
+                //((ContentPage)((ListView)((StackLayout)b.ParentView).ParentView).ParentView).DisplayAlert("Clicked", t + " button was clicked", "OK");
+                var page = FindParentPage(b);
+                var _page = page as Page;
+                if (_page != null)
+                {
+                    _page.DisplayAlert("Clicked", t + " button was clicked", "OK");
+                }
+
+                Debug.WriteLine("clicked" + t);
 			};
 
 			View = new StackLayout {
@@ -52,6 +59,25 @@ namespace WorkingWithListview
 				}
 			};
 		}
-	}
+
+        private Element FindParentPage(Element e)
+        {
+            if (e is Page)
+            {
+                return (Page)e;
+            }
+            else
+            {
+                if (e.Parent != null)
+                {
+                    return FindParentPage(e.Parent);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+    }
 }
 
