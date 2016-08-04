@@ -11,9 +11,10 @@ namespace WorkingWithFiles
 		{
 			var editor = new Label { Text = "loading...", HeightRequest = 300};
 
-			#region How to load a text file embedded resource
+			#region How to load a text file embedded resource  嵌入的txt文本资源
 			var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
 			Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
+            //注意文件名格式：程序集名称.目录名称.文件名称  （几部分以点号相连）。
 
 			string text = "";
 			using (var reader = new System.IO.StreamReader (stream)) {
@@ -30,7 +31,8 @@ namespace WorkingWithFiles
 					new Label { Text = "Embedded Resource Text File (PCL)", 
 						FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
 						FontAttributes = FontAttributes.Bold
-					}, editor
+					},
+                    editor
 				}
 			};
 

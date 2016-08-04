@@ -11,8 +11,8 @@ namespace WorkingWithFiles
 	{
 		public LoadResourceXml ()
 		{
-			#region How to load an XML file embedded resource
-			var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+            #region How to load an XML file embedded resource  嵌入的xml文本资源
+            var assembly = typeof(LoadResourceXml).GetTypeInfo().Assembly;
 			Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
 
 			List<Monkey> monkeys;
@@ -33,7 +33,8 @@ namespace WorkingWithFiles
 					new Label { Text = "Embedded Resource XML File (PCL)", 
 						FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
 						FontAttributes = FontAttributes.Bold
-					}, listView
+					},
+                    listView
 				}
 			};
 

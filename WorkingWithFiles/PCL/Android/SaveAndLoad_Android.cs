@@ -4,6 +4,7 @@ using WorkingWithFiles.Droid;
 using System.IO;
 using System.Threading.Tasks;
 using WorkingWithFiles;
+using System.Collections.Generic;
 
 [assembly: Dependency (typeof (SaveAndLoad_Android))]
 
@@ -32,9 +33,25 @@ namespace WorkingWithFiles.Droid
 			return File.Exists (CreatePathToFile (filename));
 		}
 
-		#endregion
+        /// <summary>
+        /// 获得系统目录
+        /// </summary>
+        /// <returns></returns>
+        public string[] GetSystemDir()
+        {
+            var dirList = new List<string>();
 
-		string CreatePathToFile (string filename)
+            dirList.Add(Environment.GetFolderPath(Environment.SpecialFolder.System));
+            dirList.Add(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
+            dirList.Add(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            dirList.Add(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic));
+
+            return dirList.ToArray();
+        }
+
+        #endregion
+
+        string CreatePathToFile (string filename)
 		{
 			var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 			return Path.Combine(docsPath, filename);

@@ -19,9 +19,11 @@ namespace WorkingWithFiles
 			var fileService = DependencyService.Get<ISaveAndLoad> ();
 
 			var input = new Entry { Text = "" };
-			var output = new Label { Text = "" };
-			saveButton = new Button {Text = "Save"};
+            var output = new Label { Text = "", BackgroundColor = Color.Gray, TextColor = Color.Blue };
+            var editor = new Editor { Text="", HeightRequest = 400 };
 
+            //保存文件
+			saveButton = new Button {Text = "Save"};
 			saveButton.Clicked += async (sender, e) => {
 				loadButton.IsEnabled = saveButton.IsEnabled = false;
 				// uses the Interface defined in this project, and the implementations that must
@@ -31,6 +33,7 @@ namespace WorkingWithFiles
 				loadButton.IsEnabled = saveButton.IsEnabled = true;
 			};
 
+            //加载文件
 			loadButton = new Button {Text = "Load"};
 			loadButton.Clicked += async (sender, e) => {
 				loadButton.IsEnabled = saveButton.IsEnabled = false;
@@ -39,7 +42,14 @@ namespace WorkingWithFiles
 				// be written in the iOS, Android and WinPhone app projects to do the actual file manipulation
 				output.Text = await fileService.LoadTextAsync(fileName);
 				loadButton.IsEnabled = saveButton.IsEnabled = true;
-			};
+
+                //show system dir
+                var systemDirs = fileService.GetSystemDir();
+                var showText = string.Join(Environment.NewLine, systemDirs);
+                editor.Text = showText;
+                await DisplayAlert("", showText, "OK");
+            };
+
 			loadButton.IsEnabled = fileService.FileExists (fileName);
 
 			var buttonLayout = new StackLayout {
@@ -60,8 +70,9 @@ namespace WorkingWithFiles
 					new Label { Text = "Type below and press Save, then Load" },
 					input,
 					buttonLayout,
-					output
-				}
+					output,
+                    editor
+                }
 			};
 		}
 	}

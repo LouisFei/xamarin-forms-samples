@@ -15,6 +15,12 @@ namespace WorkingWithFiles
 		Task SaveTextAsync (string filename, string text);
 		Task<string> LoadTextAsync (string filename);
 		bool FileExists (string filename);
-	}
+
+        /// <summary>
+        /// 获得系统目录
+        /// </summary>
+        /// <returns></returns>
+        string[] GetSystemDir();
+    }
 }
 

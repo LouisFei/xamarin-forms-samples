@@ -11,12 +11,11 @@ namespace WorkingWithFiles
 	{
 		public LoadResourceJson()
 		{
-			#region How to load an Json file embedded resource
-			var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+			#region How to load an Json file embedded resource 嵌入的json文本资源
+			var assembly = typeof(LoadResourceJson).GetTypeInfo().Assembly;
 			Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLJsonResource.json");
 
 			Earthquake[] earthquakes;
-
 
 			using (var reader = new System.IO.StreamReader(stream))
 			{
@@ -31,7 +30,6 @@ namespace WorkingWithFiles
 			var listView = new ListView();
 			listView.ItemsSource = earthquakes;
 
-
 			Content = new StackLayout
 			{
 				Padding = new Thickness(0, 20, 0, 0),
@@ -40,7 +38,8 @@ namespace WorkingWithFiles
 					new Label { Text = "Embedded Resource JSON File (PCL)",
 						FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
 						FontAttributes = FontAttributes.Bold
-					}, listView
+					},
+                    listView
 				}
 			};
 
