@@ -7,6 +7,7 @@ namespace WorkingWithListview
 {
 	/// <summary>
 	/// Demonstrates the new ContextActions property introduced in Xamarin.Forms 1.3
+    /// 演示item的上下文行为
 	/// </summary>
 	public class ContextActionsCell : ViewCell
 	{
