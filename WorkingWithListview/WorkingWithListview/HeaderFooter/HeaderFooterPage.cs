@@ -33,6 +33,7 @@ namespace WorkingWithListview
 			listView.ItemTemplate.SetBinding(TextCell.TextProperty, "Name");
 			listView.ItemTemplate.SetBinding(TextCell.DetailProperty, "Description");
 
+            //Header
 			listView.Header = new StackLayout { 
 				Padding = new Thickness(5,10,5,0),
 				BackgroundColor = Color.FromHex("#cccccc"),
@@ -42,6 +43,7 @@ namespace WorkingWithListview
 				}
 			};
 
+            //Footer
 			listView.Footer = new Label { Text = "Footer" };
 
 			// currently doesn't work
