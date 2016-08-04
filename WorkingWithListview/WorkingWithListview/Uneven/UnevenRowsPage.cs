@@ -29,7 +29,8 @@ Aye, there's the rub, For in that sleep of death, what dreams may come,",
 			listView.ItemTapped += (sender, e) => {
 				if (e == null) return; // has been set to null, do not 'process' tapped event
 				Debug.WriteLine("Tapped: " + e.Item);
-				((ListView)sender).SelectedItem = null; // de-select the row
+                DisplayAlert("Tapped", e.Item + " row was tapped", "OK");
+                ((ListView)sender).SelectedItem = null; // de-select the row
 			};
 
 			Padding = new Thickness (0,20,0,0);
