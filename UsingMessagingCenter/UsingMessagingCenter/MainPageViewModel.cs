@@ -12,10 +12,13 @@ namespace UsingMessagingCenter
 		{
 			Greetings = new ObservableCollection<string> ();
 
-			MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
+            //https://developer.xamarin.com/guides/xamarin-forms/messaging-center/
+            //订阅消息
+            MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
 				Greetings.Add("Hi");
 			});
 
+            //订阅消息
 			MessagingCenter.Subscribe<MainPage, string> (this, "Hi", (sender, arg) => {
 				Greetings.Add("Hi " + arg);
 			});
