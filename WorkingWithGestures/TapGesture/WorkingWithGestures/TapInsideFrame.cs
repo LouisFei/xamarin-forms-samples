@@ -23,15 +23,12 @@ namespace WorkingWithGestures
 					FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
 				}
 			};
-
-
-			var tapGestureRecognizer = 
-				new TapGestureRecognizer();
+            
+			var tapGestureRecognizer = new TapGestureRecognizer();
 			//tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 			tapGestureRecognizer.Tapped += OnTapGestureRecognizerTapped;
 			frame.GestureRecognizers.Add(tapGestureRecognizer);
-
-
+            
 		 	label = new Label
 			{
 				Text = " ",

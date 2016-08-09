@@ -19,9 +19,9 @@ namespace WorkingWithGestures
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 			};
 
-
-			var tapGestureRecognizer = new TapGestureRecognizer();
-//			tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
+            //https://developer.xamarin.com/guides/xamarin-forms/user-interface/gestures/
+            var tapGestureRecognizer = new TapGestureRecognizer();
+			//tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 			tapGestureRecognizer.Tapped += OnTapGestureRecognizerTapped;
 			image.GestureRecognizers.Add(tapGestureRecognizer);
 
