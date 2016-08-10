@@ -13,13 +13,10 @@
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
     
-    <Slider x:Name="slider"
-            Maximum="360"
-            VerticalOptions="CenterAndExpand" />
+    <Slider x:Name="slider" Maximum="360" VerticalOptions="CenterAndExpand" />
 
     <Label BindingContext="{x:Reference slider}"
-           Text="{Binding Value, 
-                          StringFormat='The angle is {0:F0} degrees'}"
+           Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
            FontSize="Large"
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />

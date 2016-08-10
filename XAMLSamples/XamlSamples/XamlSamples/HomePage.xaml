@@ -8,19 +8,12 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <StackLayout Orientation="Horizontal"
-                       Padding="5, 0">
-            <Label Text="{Binding PageName}"
-                   HorizontalOptions="StartAndExpand"
-                   VerticalOptions="Center" />
+          <StackLayout Orientation="Horizontal" Padding="5, 0">
+            <Label Text="{Binding PageName}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
 
-            <Button Text="View"
-                    Command="{Binding GoToCommand}"
-                    CommandParameter="{Binding PageType}" />
+            <Button Text="View" Command="{Binding GoToCommand}" CommandParameter="{Binding PageType}" />
 
-            <Button Text="Source"
-                    Command="{Binding BrowseCommand}"
-                    CommandParameter="{Binding PageName}" />
+            <Button Text="Source" Command="{Binding BrowseCommand}" CommandParameter="{Binding PageName}" />
 
           </StackLayout>
         </ViewCell>

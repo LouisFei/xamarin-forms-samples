@@ -36,8 +36,7 @@ namespace XamlSamples
         async void NavigateTo(Type pageType)
         {
             // Get all the constructors of the page type.
-            IEnumerable<ConstructorInfo> constructors = 
-                    pageType.GetTypeInfo().DeclaredConstructors;
+            IEnumerable<ConstructorInfo> constructors = pageType.GetTypeInfo().DeclaredConstructors;
 
             foreach (ConstructorInfo constructor in constructors)
             {
