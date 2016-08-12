@@ -12,6 +12,10 @@ namespace LayoutSamples
 			InitializeComponent ();
 
 			List<Page> listOfPages = new List<Page> () {
+				new StackLayoutDemo (),
+				new StackLayoutDemoCode (),
+				new AbsoluteLayoutExploration (),
+				new AbsoluteLayoutExplorationCode (),
 				new CalculatorGridXAML (),
 				new CalculatorGridCode (),
 				new MonkeyMoneyXaml (),
@@ -24,11 +28,7 @@ namespace LayoutSamples
 				new RelativeLayoutDemoCode (),
 				new RelativeLayoutExploration (),
 				new RelativeLayoutExplorationCode (),
-				new AbsoluteLayoutExploration (),
-				new AbsoluteLayoutExplorationCode (),
 				new GridExploration (),
-				new StackLayoutDemo (),
-				new StackLayoutDemoCode (),
 				new LabelGridXaml (),
 				new LabelGridCode (),
 				new ScrollingDemoXAML (),

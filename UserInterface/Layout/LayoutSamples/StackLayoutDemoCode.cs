@@ -10,17 +10,24 @@ namespace LayoutSamples
 		int maxStates = 2;
 		StackLayout layout;
 		Button StackChangeButton;
+
 		public StackLayoutDemoCode ()
 		{
 			Title = "StackLayout Demo - C#";
 			layout = new StackLayout { Spacing = 0 };
+
 			StackChangeButton = new Button {
 				Text = "Spacing: 0",
 				FontSize = 20,
+                BackgroundColor = Color.FromHex("#fff"),
+                BorderColor = Color.Red,
+                BorderWidth = 5,
+                BorderRadius = 20,
 				VerticalOptions = LayoutOptions.Start,
 				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 			StackChangeButton.Clicked += StackChangeButton_Clicked;
+
 			BoxView yellowBox = new BoxView {
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				HorizontalOptions = LayoutOptions.FillAndExpand,

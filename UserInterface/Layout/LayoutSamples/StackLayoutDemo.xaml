@@ -7,11 +7,12 @@
 	<ContentPage.Content>
 		
     <StackLayout Spacing="5" x:Name="layout">
-			<Button Text="Spacing: 0"  FontSize="20" VerticalOptions="Start" HorizontalOptions="FillAndExpand" x:Name="StackChangeButton" />
+			<Button Text="Spacing: 0" BackgroundColor="Red" BorderRadius="20" FontSize="20" VerticalOptions="Start" HorizontalOptions="FillAndExpand" x:Name="StackChangeButton" />
       
 			<BoxView Color="Yellow" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
 			<BoxView Color="Green" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-			<BoxView HeightRequest="75" Color="Blue" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+			<BoxView Color="Blue" HeightRequest="75" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+      
 		</StackLayout>
     
 	</ContentPage.Content>

@@ -9,9 +9,11 @@ namespace LayoutSamples
 	{
 		int currentState = 0;
 		int maxStates = 2;
+
 		public StackLayoutDemo ()
 		{
 			InitializeComponent ();
+
 			StackChangeButton.Clicked += StackChangeButton_Clicked;
 		}
 
