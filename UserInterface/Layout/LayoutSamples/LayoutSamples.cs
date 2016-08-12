@@ -8,10 +8,15 @@ namespace LayoutSamples
 	{
 		public App ()
 		{
-			// The root page of your application
-			MainPage = new NavigationPage {BarBackgroundColor=Color.Green, BarTextColor = Color.White};
+            // The root page of your application
+            MainPage = new NavigationPage
+            {
+                BarBackgroundColor = Color.Green,
+                BarTextColor = Color.White
+            };
 
 			MainPage.Navigation.PushAsync (new ListPage ());
+
 			//MainPage.Navigation.PushAsync (new AbsoluteLayoutDemoCode ());
 		}
 
