@@ -8,7 +8,10 @@ namespace LayoutSamples
 	{
 		public AbsoluteLayoutExplorationCode ()
 		{
-			Title = "Absolute Layout Exploration - C#";
+            //https://github.com/LouisFei/xamarin-doc/blob/master/guides/xamarin-forms/user-interface/layouts/absolute-layout.md
+            //https://developer.xamarin.com/guides/xamarin-forms/user-interface/layouts/absolute-layout/
+
+            Title = "Absolute Layout Exploration - C#";
 			var layout = new AbsoluteLayout();
 
 			var centerLabel = new Label {Text = "I'm centered on iPhone 4 but no other device.", LineBreakMode = LineBreakMode.WordWrap, FontSize = 20};

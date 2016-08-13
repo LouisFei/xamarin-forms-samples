@@ -1,15 +1,33 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-x:Class="LayoutSamples.AbsoluteLayoutExploration"
-Title="Absolute Layout Exploration - XAML">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LayoutSamples.AbsoluteLayoutExploration"
+             Title="Absolute Layout Exploration - XAML">
+  
 	<ContentPage.Content>
+    
 		<AbsoluteLayout>
-			<Label Text="I'm centered on iPhone 4 but no other device." AbsoluteLayout.LayoutBounds="115,150,100,100" LineBreakMode="WordWrap" FontSize="20"  />
-			<Label Text="I'm bottom center on every device." AbsoluteLayout.LayoutBounds=".5,1,.5,.1" AbsoluteLayout.LayoutFlags="All" FontSize="20" LineBreakMode="WordWrap"  />
-			<BoxView Color="Olive"  AbsoluteLayout.LayoutBounds="1,.5, 25, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
-			<BoxView Color="Red" AbsoluteLayout.LayoutBounds="0,.5,25,100" AbsoluteLayout.LayoutFlags="PositionProportional" />
-			<BoxView Color="Blue" AbsoluteLayout.LayoutBounds=".5,0,100,25" AbsoluteLayout.LayoutFlags="PositionProportional" />
+      <!-- AbsoluteLayout.LayoutFlags默认值为None，表示LayoutBounds四个值是按绝对值定位 -->
+			<Label AbsoluteLayout.LayoutBounds="115,150,100,100" 
+             FontSize="20" LineBreakMode="WordWrap" Text="I'm centered on iPhone 4 but no other device."  />
+
+      <!-- AbsoluteLayout.LayoutFlags值为All，表示LayoutBounds四个值是按比例定位 -->
+			<Label AbsoluteLayout.LayoutBounds=".5,1,.5,.1" AbsoluteLayout.LayoutFlags="All"  
+             FontSize="20" LineBreakMode="WordWrap" Text="I'm bottom center on every device." />
+      
+      <!-- 定位按比例，尺寸按绝对值。 -->
+			<BoxView AbsoluteLayout.LayoutBounds=".5,0,100,25"   AbsoluteLayout.LayoutFlags="PositionProportional" 
+               Color="Blue" />
+
+      <!-- 定位按比例，尺寸按绝对值。 -->
+			<BoxView AbsoluteLayout.LayoutBounds="0,.5,25,100" AbsoluteLayout.LayoutFlags="PositionProportional" 
+               Color="Red"   />
+
+      <!-- 定位按比例，尺寸按绝对值。 -->
+			<BoxView AbsoluteLayout.LayoutBounds="1,.5, 25, 100" AbsoluteLayout.LayoutFlags="PositionProportional" 
+               Color="Olive" />
 		</AbsoluteLayout>
+    
 	</ContentPage.Content>
+  
 </ContentPage>
