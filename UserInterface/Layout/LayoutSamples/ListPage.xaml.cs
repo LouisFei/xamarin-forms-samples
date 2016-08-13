@@ -12,23 +12,30 @@ namespace LayoutSamples
 			InitializeComponent ();
 
 			List<Page> listOfPages = new List<Page> () {
+
+                //线性布局（垂直/水平）
 				new StackLayoutDemo (),
 				new StackLayoutDemoCode (),
 
+                //绝对定位布局
 				new AbsoluteLayoutExploration (),
 				new AbsoluteLayoutExplorationCode (),
 
 				new AbsoluteLayoutDemoXaml (),
 				new AbsoluteLayoutDemoCode (),
 
+                //相对定位布局
 				new RelativeLayoutExploration (),
 				new RelativeLayoutExplorationCode (),
 
 				new RelativeLayoutDemo (),
 				new RelativeLayoutDemoCode (),
 
+                //Grid网格布局
 				new CalculatorGridXAML (),
 				new CalculatorGridCode (),
+
+                //混合布局（线性，网格，绝对）
 				new MonkeyMoneyXaml (),
 				new MonkeyMoneyCode (),
 				new MonkeyMusic (),

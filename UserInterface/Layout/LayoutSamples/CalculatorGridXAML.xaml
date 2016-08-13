@@ -29,6 +29,7 @@
 	</ContentPage.Resources>
   
 	<ContentPage.Content>
+    
 		<Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="150" />
@@ -72,6 +73,7 @@
 			<Button Grid.Row="5" Grid.Column="2" Style="{StaticResource plainButton}"  Text="." />
 			<Button Grid.Row="5" Grid.Column="3" Style="{StaticResource orangeButton}" Text="=" />
 		</Grid>
+    
 	</ContentPage.Content>
   
 </ContentPage>
