@@ -26,7 +26,10 @@
       <!-- 定位按比例，尺寸按绝对值。 -->
 			<BoxView AbsoluteLayout.LayoutBounds="1,.5, 25, 100" AbsoluteLayout.LayoutFlags="PositionProportional" 
                Color="Olive" />
-		</AbsoluteLayout>
+
+      <BoxView AbsoluteLayout.LayoutBounds="1,1,.2,.2" AbsoluteLayout.LayoutFlags="All" Color="Green" />
+      <BoxView AbsoluteLayout.LayoutBounds="1,1,.1,.1" AbsoluteLayout.LayoutFlags="All" Color="Yellow" />
+    </AbsoluteLayout>
     
 	</ContentPage.Content>
   
