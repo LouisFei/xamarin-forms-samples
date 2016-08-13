@@ -14,20 +14,25 @@ namespace LayoutSamples
 			List<Page> listOfPages = new List<Page> () {
 				new StackLayoutDemo (),
 				new StackLayoutDemoCode (),
+
 				new AbsoluteLayoutExploration (),
 				new AbsoluteLayoutExplorationCode (),
+
 				new AbsoluteLayoutDemoXaml (),
 				new AbsoluteLayoutDemoCode (),
+
+				new RelativeLayoutExploration (),
+				new RelativeLayoutExplorationCode (),
+
+				new RelativeLayoutDemo (),
+				new RelativeLayoutDemoCode (),
+
 				new CalculatorGridXAML (),
 				new CalculatorGridCode (),
 				new MonkeyMoneyXaml (),
 				new MonkeyMoneyCode (),
 				new MonkeyMusic (),
 				new MonkeyMusicCode (),
-				new RelativeLayoutDemo (),
-				new RelativeLayoutDemoCode (),
-				new RelativeLayoutExploration (),
-				new RelativeLayoutExplorationCode (),
 				new GridExploration (),
 				new LabelGridXaml (),
 				new LabelGridCode (),

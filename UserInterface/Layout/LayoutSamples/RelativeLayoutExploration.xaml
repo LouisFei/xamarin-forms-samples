@@ -1,37 +1,86 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-x:Class="LayoutSamples.RelativeLayoutExploration"
-Title="RelativeLayout Exploration">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LayoutSamples.RelativeLayoutExploration"
+             Title="RelativeLayout Exploration">
+  
 	<ContentPage.Content>
+    
 		<RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 			
+      <!--
+          蓝色盒子，50宽，50高。
+          X轴约束：相对于父元素的宽度，因子为0。
+          Y轴约束：相对于父元素的高度，因子为0。
+          坐标最终为左上角。
+          
+      -->
 			<BoxView Color="Blue" HeightRequest="50" WidthRequest="50" 
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
-             <BoxView Color="Red" HeightRequest="50" WidthRequest="50" 
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .9}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
-	         <BoxView Color="Purple"
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .25}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .5}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .5}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .25}" />
-	         <BoxView Color="Green" HeightRequest="50" WidthRequest="50" 
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .9}" />
-	        <BoxView Color="Yellow" HeightRequest="-50" WidthRequest="50" 
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .9}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 1}" />
-	        <BoxView Color="Gray" WidthRequest="15" x:Name="pole"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.75}"
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .45}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .25}" />
-	        <BoxView Color="Green"
-	        	RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.10, Constant=10}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.2, Constant=20}"
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToView, ElementName=pole, Property=X, Constant=15}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pole, Property=Y, Constant=0}" />
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}" 
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor = 0}" />
+      
+      <!--
+          红色盒子，100宽，100高。
+          X轴约束，相对于父元素宽度，9分之一处。
+          Y轴约束，相对于父元素高度，0处。
+          坐标最终为右上角。
+      -->
+      <BoxView Color="Red" HeightRequest="100" WidthRequest="100" 
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .9}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor = 0}" />
+      
+      <!--
+          X轴，在相对于父元素宽度的1/4处。
+          Y轴，在相对于父元素高度的1/4处。
+          高度，为父元素高度的一半。
+          宽度，为父元素宽度的一半。
+      -->
+	    <BoxView Color="Purple"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .25}" 
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor = .25}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor = .5}" 
+               RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .5}" />
+      
+      <!--
+          绿盒子，宽50高50，在屏幕左下角。
+      -->
+      <BoxView Color="Green" HeightRequest="50" WidthRequest="50" 
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}" 
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor = .9}" />
+      
+      <!--
+          
+      -->
+	    <BoxView Color="Yellow" HeightRequest="-50" WidthRequest="50" 
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor = .9}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 1}" />
+      
+      <!--
+          灰盒子,宽15。
+          X轴，相对于父元素宽度的0.45处。
+          Y轴，相对于父元素高度的0.25处。
+          高度，相对于父元素高度的0.75。
+      -->
+	    <BoxView Color="Gray" WidthRequest="15" x:Name="pole"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .45}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor = .25}" 
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.75}" />
+      
+      <!--
+          绿盒子。
+          X轴，相对于灰盒子X轴基础上，加20。
+          Y轴，相对于灰盒子Y轴基础上，加5。
+          高度，相对于父元素高度的0.1，再加上10。
+          宽度，相对于父元素宽度的0.2，再加上20。
+      -->
+	    <BoxView Color="Green" 
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pole, Property=X, Constant=20}" 
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pole, Property=Y, Constant=5}" 
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1, Constant=10}" 
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.2, Constant=20}" />
+      
 		</RelativeLayout>
+    
 	</ContentPage.Content>
+  
 </ContentPage>
