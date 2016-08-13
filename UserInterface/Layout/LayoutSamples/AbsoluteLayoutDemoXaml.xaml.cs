@@ -16,17 +16,70 @@ namespace LayoutSamples
 				"the white vertical line represents the X anchor point";
 		}
 
+        #region 处理坐标
 		public void HandlePosition(object sender, EventArgs e)
 		{
 			UpdatePosition();
 		}
 
-		public void HandleSize(object sender, EventArgs e)
-		{
-			UpdateSize();
-		}
+        async void UpdatePosition()
+        {
+            ToggleEnabled(false);
 
-		async void UpdateSize()
+            float x = 0.0f;
+            float y = 0.0f;
+            AbsoluteLayout.SetLayoutBounds(box, new Rectangle(x, y, .25, .25));
+            AbsoluteLayout.SetLayoutBounds(anchorVert, new Rectangle(x, y + (y * box.Height), 5, 5));
+            //AbsoluteLayout.SetLayoutBounds(box, new Rectangle(x, y, .25, .25));
+            //AbsoluteLayout.SetLayoutBounds(anchorVert, new Rectangle(x, y, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+            await Task.Delay(1000);
+
+            while (x <= 1.0)
+            {
+                if (Math.Round(x, 2) == 0f)
+                {
+                    status.Text = "Anchor point is far left";
+                    await Task.Delay(500);
+                }
+
+                if (Math.Round(x, 2) == 0.5f)
+                {
+                    status.Text = "Anchor point is in the center";
+                    await Task.Delay(3000);
+                }
+
+                if (Math.Round(x, 2) == 1f)
+                {
+                    status.Text = "Anchor point is far right";
+                    await Task.Delay(500);
+                    break;
+                }
+
+                x += .01f;
+                y += .01f;
+                flagsBounds.Text = string.Format("Flags=\"All\" Bounds=\"{0}, {1}, .25, .25\"", Math.Round(x, 2), Math.Round(y, 2));
+                AbsoluteLayout.SetLayoutBounds(box, new Rectangle(x, y, .25, .25));
+                AbsoluteLayout.SetLayoutBounds(anchorVert, new Rectangle(x, y + (y * box.Height), 5, 5));
+
+                UpdateLabel();
+                status.Text = " ";
+
+                await Task.Delay(50);
+            }
+
+            ToggleEnabled(true);
+        }
+
+        #endregion
+
+
+        #region 处理尺寸
+        public void HandleSize(object sender, EventArgs e)
+        {
+            UpdateSize();
+        }
+
+        async void UpdateSize()
 		{
 			ToggleEnabled(false);
 
@@ -72,55 +125,9 @@ namespace LayoutSamples
 			ToggleEnabled(true);
 		}
 
-		async void UpdatePosition()
-		{
-			ToggleEnabled(false);
+        #endregion
 
-			float x = 0.0f;
-			float y = 0.0f;
-			AbsoluteLayout.SetLayoutBounds(box, new Rectangle(x, y, .25, .25));
-			AbsoluteLayout.SetLayoutBounds(anchorVert, new Rectangle(x, y + (y * box.Height), 5, 5));
-			//AbsoluteLayout.SetLayoutBounds(box, new Rectangle(x, y, .25, .25));
-			//AbsoluteLayout.SetLayoutBounds(anchorVert, new Rectangle(x, y, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
-			await Task.Delay(1000);
-
-			while(x <= 1.0)
-			{
-				if(Math.Round(x, 2) == 0f)
-				{
-					status.Text = "Anchor point is far left";
-					await Task.Delay(500);
-				}
-
-				if(Math.Round(x, 2) == 0.5f)
-				{
-					status.Text = "Anchor point is in the center";
-					await Task.Delay(3000);
-				}
-
-				if(Math.Round(x, 2) == 1f)
-				{
-					status.Text = "Anchor point is far right";
-					await Task.Delay(500);
-					break;
-				}
-
-				x += .01f;
-				y += .01f;
-				flagsBounds.Text = string.Format("Flags=\"All\" Bounds=\"{0}, {1}, .25, .25\"", Math.Round(x, 2), Math.Round(y,2));
-				AbsoluteLayout.SetLayoutBounds(box, new Rectangle(x, y, .25, .25));
-				AbsoluteLayout.SetLayoutBounds(anchorVert, new Rectangle(x, y + (y * box.Height), 5, 5));
-
-				UpdateLabel();
-				status.Text = " ";
-
-				await Task.Delay(50);
-			}
-
-			ToggleEnabled(true);
-		}
-
-		void UpdateLabel()
+        void UpdateLabel()
 		{
 			var rect = AbsoluteLayout.GetLayoutBounds(box);
 			coords.Text = string.Format("X:{0} x Y:{1}, W:{2} x H:{3}", rect.X.ToString("0.00"), rect.Y.ToString("0:00"), Math.Round(rect.Width, 2), Math.Round(rect.Height, 2));
