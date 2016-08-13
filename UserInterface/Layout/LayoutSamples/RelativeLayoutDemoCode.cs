@@ -59,7 +59,8 @@ namespace LayoutSamples
 		{
 
 			layout.Children.Remove (box);
-			layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
+			layout.Children.Add(box, 
+                Constraint.RelativeToParent((parent) =>
 				{
 					return x;
 				}), 
@@ -67,8 +68,8 @@ namespace LayoutSamples
 					{
 						return y ;
 					}),
-				Constraint.Constant(50), Constraint.Constant(50));
-
+				Constraint.Constant(50), 
+                Constraint.Constant(50));
 
 			while(x < 1)
 			{
@@ -77,7 +78,8 @@ namespace LayoutSamples
 				centerLabel.Text = String.Format ("{0} x {1}", x, y);
 				//flagsBounds.Text = string.Format("Flags=\"All\" Bounds=\"{0}, 0, .25, .25\"", Math.Round(x, 2));
 				layout.Children.Remove(box);
-				layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
+				layout.Children.Add(box, 
+                    Constraint.RelativeToParent((parent) =>
 					{
 						return (x * parent.Width) - 50;
 					}), 
@@ -85,7 +87,9 @@ namespace LayoutSamples
 						{
 							return (y * parent.Height) - 50;
 						}),
-					Constraint.Constant(50), Constraint.Constant(50));
+					Constraint.Constant(50), 
+                    Constraint.Constant(50));
+
 				await Task.Delay(50);
 			}
 			if (x >= 1) {

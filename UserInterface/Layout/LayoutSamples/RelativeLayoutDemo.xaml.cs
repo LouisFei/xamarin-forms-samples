@@ -9,14 +9,15 @@ namespace LayoutSamples
 	{
 		public float x { get; set; }
 		public float y { get; set; }
-		public BoxView center;
+		//public BoxView center;
+
 		public RelativeLayoutDemo()
 		{
 			InitializeComponent();
 			moveButton.Clicked += MoveButton_Clicked;
 			x = 0f;
 			y = 0f;
-			center = new BoxView ();
+			//center = new BoxView ();
 			/*status.Text = "the anchor point of a child is interpollated based on its position\n\n" +
 				"the white vertical line represents the X anchor point";*/
 		}

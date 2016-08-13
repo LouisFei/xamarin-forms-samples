@@ -1,21 +1,51 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-x:Class="LayoutSamples.RelativeLayoutDemo"
-Title="RelativeLayout Demo - XAML">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LayoutSamples.RelativeLayoutDemo"
+             Title="RelativeLayout Demo - XAML">
+  
 	<ContentPage.Content>
-		<AbsoluteLayout BackgroundColor="White">
-			<RelativeLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  x:Name="layout" >
-				<BoxView x:Name="box" Color="Blue" HeightRequest="50" WidthRequest="50" 
-					RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .1}"
-	             	RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .1}" />
-	            <Label x:Name="centerLabel" FontSize="20" Text="RelativeLayout Demo" RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .5}"
-	             	RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor =.1}" />
+    
+		<AbsoluteLayout BackgroundColor="Red">
+			
+      <!--
+        绝对布局里嵌套一个相对布局控件。 
+        坐标左上。尺寸与父元素相同。
+      -->
+      <RelativeLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="layout" BackgroundColor="White">
+				
+        
+        <BoxView x:Name="box" Color="Blue" HeightRequest="50" WidthRequest="50" 
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor = .1}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .1}" />
+	          
+        <Label x:Name="centerLabel" FontSize="20" Text="RelativeLayout Demo" 
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor = .5, Constant=-100}" 
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor =.1}" />
 	            
 			</RelativeLayout>
-			<AbsoluteLayout AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" BackgroundColor="Green">
-				<Button BackgroundColor="White" FontSize="20" TextColor="Lime" Text="Move" BorderRadius="0"  AbsoluteLayout.LayoutBounds="0,1,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="moveButton" />
+      
+      
+      <!--
+          绝对定位, 
+          定位按比例：左下。
+          宽度按比例：与屏幕同宽。
+          高度绝对值：50
+          背景色：绿色
+      -->
+			<AbsoluteLayout AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+        
+        <!--
+            按钮，背景蓝色，圆角20
+            文字白色。
+            定位的尺寸都按比例显示。
+            坐标左下。宽高与父元素相同。
+        -->
+				<Button x:Name="moveButton" FontSize="20" BackgroundColor="Green" TextColor="White" Text="Move" BorderRadius="20"  
+                AbsoluteLayout.LayoutBounds="0,1,1,1" AbsoluteLayout.LayoutFlags="All" />
 			</AbsoluteLayout>
+      
 		</AbsoluteLayout>
+    
 	</ContentPage.Content>
 </ContentPage>
