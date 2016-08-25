@@ -5,9 +5,11 @@ namespace UsingMessagingCenter
 {
     public class MainPage : ContentPage
     {
+        private MainPageViewModel Data;
         public MainPage()
         {
-            BindingContext = new MainPageViewModel();
+            Data = new MainPageViewModel();
+            BindingContext = Data;
 
             //https://developer.xamarin.com/guides/xamarin-forms/messaging-center/
             // Send messages when buttons are pressed
@@ -46,6 +48,11 @@ namespace UsingMessagingCenter
             var listView = new ListView();
             listView.SetBinding(ListView.ItemsSourceProperty, "Greetings");
 
+            var button4 = new Button { Text = "test add data item" };
+            button4.Clicked += (sender, e) => {
+                this.Data.Greetings.Add(DateTime.Now.ToString());
+            };
+
             Content = new StackLayout
             {
                 Padding = new Thickness(0, 20, 0, 0),
@@ -53,6 +60,7 @@ namespace UsingMessagingCenter
                     button1,
                     button2,
                     button3,
+                    button4,
                     listView }
             };
         }

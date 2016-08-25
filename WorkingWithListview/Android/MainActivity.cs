@@ -13,10 +13,12 @@ using Xamarin.Forms.Platform.Android;
 
 namespace WorkingWithListview.Android
 {
-	[Activity (Label = "WorkingWithListview.Android.Android", Icon = "@drawable/icon", MainLauncher = true, 
+	[Activity (
+        Label = "WorkingWithListview.Android.Android", 
+        Icon = "@drawable/icon", 
+        MainLauncher = true, 
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : 
-	global::Xamarin.Forms.Platform.Android.FormsApplicationActivity // superclass new in 1.3
+	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity // superclass new in 1.3
 	{
 		protected override void OnCreate (Bundle bundle)
 		{

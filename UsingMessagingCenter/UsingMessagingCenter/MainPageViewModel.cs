@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
@@ -6,11 +7,13 @@ namespace UsingMessagingCenter
 {
 	public class MainPageViewModel
 	{
-		public ObservableCollection<string> Greetings { get; set; }
+        public ObservableCollection<string> Greetings { get; set; }
+        //public List<string> Greetings { get; set; }
 
-		public MainPageViewModel ()
+        public MainPageViewModel ()
 		{
-			Greetings = new ObservableCollection<string> ();
+            Greetings = new ObservableCollection<string>();
+            //Greetings = new List<string>();
 
             //https://developer.xamarin.com/guides/xamarin-forms/messaging-center/
             //订阅消息
