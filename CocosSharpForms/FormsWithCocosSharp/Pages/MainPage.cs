@@ -17,6 +17,7 @@ namespace FormsWithCocosSharp
 			var grid = new Grid ();
 			grid.RowSpacing = 0;
 			this.Content = grid;
+
 			grid.RowDefinitions = new RowDefinitionCollection {
 				// Each half will be the same size:
 				new RowDefinition{ Height = new GridLength(1, GridUnitType.Star)},
@@ -36,8 +37,9 @@ namespace FormsWithCocosSharp
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				// This gets called after CocosSharp starts up:
-						ViewCreated = HandleViewCreated
+				ViewCreated = HandleViewCreated
 			};
+
 			// We'll add it to the top half (row 0)
 			grid.Children.Add (gameView, 0, 0);
 		}
