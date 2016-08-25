@@ -2,13 +2,14 @@
 using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using CustomRenderer;
-using CustomRenderer.Droid;
 using Android.App;
 using Android.Hardware;
 using Android.Views;
 using Android.Graphics;
 using Android.Widget;
+
+using CustomRenderer;
+using CustomRenderer.Droid;
 
 [assembly:ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
 namespace CustomRenderer.Droid
@@ -81,7 +82,6 @@ namespace CustomRenderer.Droid
 
 		public void OnSurfaceTextureUpdated (SurfaceTexture surface)
 		{
-
 		}
 
 		public void OnSurfaceTextureAvailable (SurfaceTexture surface, int width, int height)
