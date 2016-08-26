@@ -11,6 +11,16 @@ namespace ThemesDemo
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void OnShowLabelStyleDemoPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new LabelStyleClassDemoPage());
+        }
+        private void OnShowButtonStyleDemoPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ButtonStyleClassDemoPage());
+        }
+
+    }
 }
 

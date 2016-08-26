@@ -11,7 +11,7 @@ namespace ThemesDemo
 		{
 			InitializeComponent ();
 
-			MainPage = new BasicPage ();
+            MainPage = new NavigationPage(new BasicPage());
 		}
 	}
 }

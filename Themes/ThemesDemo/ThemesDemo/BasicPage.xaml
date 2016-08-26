@@ -4,21 +4,29 @@
 			 x:Class="ThemesDemo.BasicPage"
 			 Padding="0,20,0,0">
 
-	<StackLayout>
-		<Label Text="Control Appearance" />
-		<StackLayout Padding="40">
-		    <Label Text="Regular label" />
-		    <Entry Placeholder="type here" />
-		    <Button Text="OK" />
-		    <BoxView Color="Yellow" />
-		    <Switch />
-		</StackLayout>
+  <ScrollView>
+    
+	  <StackLayout>
+		  <Label Text="Control Appearance" />
+		  <StackLayout Padding="40">
+		      <Label Text="Regular label" />
+		      <Entry Placeholder="type here" />
+		      <Button Text="OK" />
+		      <BoxView Color="Yellow" />
+		      <Switch />
+		  </StackLayout>
 
-		<Label Text="BoxView StyleClass" />
-		<StackLayout Padding="40">
-		    <BoxView StyleClass="HorizontalRule" />
-		    <BoxView StyleClass="Circle" />
-		    <BoxView StyleClass="Rounded" />
-		</StackLayout>
-</StackLayout>
+		  <Label Text="BoxView StyleClass" />
+		  <StackLayout Padding="40">
+		      <BoxView StyleClass="HorizontalRule" />
+		      <BoxView StyleClass="Circle" />
+		      <BoxView StyleClass="Rounded" />
+		  </StackLayout>
+      
+      <Button Text="Label StyleClass Demo" Clicked="OnShowLabelStyleDemoPage" />
+      <Button Text="Button StyleClass Demo" Clicked="OnShowButtonStyleDemoPage" />
+      
+    </StackLayout>
+    
+  </ScrollView>
 </ContentPage>

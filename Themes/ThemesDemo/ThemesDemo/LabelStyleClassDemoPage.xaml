@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThemesDemo.LabelStyleClassDemoPage"
+             Title="Label Style Class Demo">
+
+  <ContentPage.Content>
+
+    <ScrollView>
+
+      <StackLayout Padding="20">
+
+        <Label Text="Header" StyleClass="Header" />
+        <Label Text="Subheader" StyleClass="Subheader" />
+        <Label Text="Body" StyleClass="Body" />
+        <Label Text="Link" StyleClass="Link" />
+        <Label Text="Inverse" StyleClass="Inverse" />
+        
+      </StackLayout>
+      
+    </ScrollView>
+    
+  </ContentPage.Content>
+
+</ContentPage>
