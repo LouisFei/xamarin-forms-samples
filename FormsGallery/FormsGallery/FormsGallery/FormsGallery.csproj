@@ -55,6 +55,9 @@
     <Compile Include="ListViewDemoPage.cs" />
     <Compile Include="MapDemoPage.cs" />
     <Compile Include="MasterDetailPageDemoPage.cs" />
+    <Compile Include="MasterDetailPageDemoXamlPage.xaml.cs">
+      <DependentUpon>MasterDetailPageDemoXamlPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NamedColor.cs" />
     <Compile Include="NamedColorPage.cs" />
     <Compile Include="NavigationPageDemoPage.cs" />
@@ -93,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MasterDetailPageDemoXamlPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

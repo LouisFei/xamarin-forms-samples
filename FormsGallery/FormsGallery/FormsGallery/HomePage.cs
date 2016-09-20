@@ -16,6 +16,7 @@ namespace FormsGallery
                 });
 
             this.Title = "Forms Gallery";
+
             this.Content = new TableView
                 {
                     Intent = TableIntent.Menu,
@@ -299,6 +300,12 @@ namespace FormsGallery
                                 Text = "MasterDetailPage",
                                 Command = navigateCommand,
                                 CommandParameter = typeof(MasterDetailPageDemoPage)
+                            },
+                            new TextCell
+                            {
+                                Text = "MasterDetailPage(Xaml)",
+                                Command = navigateCommand,
+                                CommandParameter = typeof(MasterDetailPageDemoXamlPage)
                             },
                             new TextCell
                             {
