@@ -31,12 +31,9 @@
       <DataTemplate>
         <ViewCell>
           <ViewCell.View>
-            <StackLayout Padding="5, 5, 0, 5"
-                         Orientation="Horizontal"
-                         Spacing="15">
+            <StackLayout Padding="5, 5, 0, 5" Spacing="15" Orientation="Horizontal">
               
-              <BoxView WidthRequest="{StaticResource boxSize}" HeightRequest="{StaticResource boxSize}"
-                       Color="{Binding Color}" />
+              <BoxView WidthRequest="{StaticResource boxSize}" HeightRequest="{StaticResource boxSize}" Color="{Binding Color}" />
 
               <StackLayout Padding="5, 0, 0, 0" VerticalOptions="Center">
                 
@@ -56,6 +53,7 @@
                                    ConverterParameter=255,
                                    StringFormat=', B={0:X2}'}" />
                 </StackLayout>
+                
               </StackLayout>
             </StackLayout>
           </ViewCell.View>
